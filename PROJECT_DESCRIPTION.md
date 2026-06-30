@@ -84,5 +84,5 @@ problem statement.
 
 - **Deployed app:** https://clutch-frontend-78884710887.asia-south1.run.app
   (backend API: https://clutch-backend-78884710887.asia-south1.run.app)
-- **GitHub repo:** _<add repo URL>_
+- **GitHub repo:** https://github.com/gurdipsembhi/clutch
 - **Demo video (optional):** _<add link>_
