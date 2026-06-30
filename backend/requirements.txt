@@ -1,0 +1,10 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.9.2
+pydantic-settings==2.5.2
+python-dotenv==1.0.1
+langgraph==1.0.1
+langchain-google-genai>=2.0.10   # Gemini via AI Studio Developer API (API-key based)
+langchain-community==0.3.27
+duckduckgo-search==8.1.1
+tzdata==2025.2

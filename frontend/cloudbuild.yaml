@@ -1,0 +1,17 @@
+# Builds the frontend image with the backend URL baked into the client bundle.
+# Usage:
+#   gcloud builds submit --config cloudbuild.yaml \
+#     --substitutions=_API_URL=https://YOUR-BACKEND-URL,_IMAGE=REGION-docker.pkg.dev/PROJECT/REPO/clutch-frontend
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - --build-arg
+      - NEXT_PUBLIC_API_URL=${_API_URL}
+      - -t
+      - ${_IMAGE}
+      - .
+images:
+  - ${_IMAGE}
+options:
+  logging: CLOUD_LOGGING_ONLY

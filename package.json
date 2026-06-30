@@ -1,0 +1,25 @@
+{
+  "name": "clutch",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Clutch — Last-Minute Life Saver. Next.js frontend + FastAPI/LangGraph backend.",
+  "scripts": {
+    "dev": "concurrently --names \"api,web\" --prefix-colors \"magenta,cyan\" \"npm:dev:backend\" \"npm:dev:frontend\"",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "cd backend && python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000",
+    "build": "npm --prefix frontend run build",
+    "start": "concurrently --names \"api,web\" --prefix-colors \"magenta,cyan\" \"npm:start:backend\" \"npm:start:frontend\"",
+    "start:frontend": "npm --prefix frontend run start",
+    "start:backend": "cd backend && python -m uvicorn app.main:app --host 0.0.0.0 --port 8000",
+    "lint": "npm --prefix frontend run lint",
+    "setup": "npm run setup:frontend && npm run setup:backend",
+    "setup:frontend": "npm --prefix frontend install",
+    "setup:backend": "cd backend && python -m venv venv && ./venv/bin/pip install -r requirements.txt"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
